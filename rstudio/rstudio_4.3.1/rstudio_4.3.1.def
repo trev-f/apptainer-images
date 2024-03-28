@@ -32,9 +32,12 @@ Stage: build
     ## cleanup
     rm quarto.tar.gz
 
+    # install R and Python packages to get most out of Quarto
+    python3 -m pip install jupyter
+
 %labels
     Author trevor.f.freeman@gmail.com
-    Version v0.1.1.9000
+    Version v0.1.1.9001
     org.opencontainers.image.source https://github.com/trev-f/apptainer-images
     org.opencontainers.image.description "Run RStudio v4.3.1 with Python available."
 
