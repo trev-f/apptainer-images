@@ -7,11 +7,11 @@ Stage: build
     apt install software-properties-common -y
     add-apt-repository ppa:deadsnakes/ppa
     apt install python3.10-dev python3-pip python3.10-venv -y
-    apt install libbz2-dev liblzma-dev libhdf5-dev libglpk-dev libfontconfig1-dev libxml2-dev -y
+    apt install libbz2-dev liblzma-dev libhdf5-dev libglpk-dev libfontconfig1-dev libxml2-dev libx11-dev -y
 
 %labels
     Author trevor.f.freeman@gmail.com
-    Version v0.1.0
+    Version v0.1.1
     org.opencontainers.image.source https://github.com/trev-f/apptainer-images
     org.opencontainers.image.description "Run RStudio v4.3.1 with Python available."
 
