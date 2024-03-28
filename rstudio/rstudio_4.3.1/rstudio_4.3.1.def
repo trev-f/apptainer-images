@@ -3,17 +3,43 @@ From: rocker/rstudio:4.3.1
 Stage: build
 
 %post
+    # install Python and necessary libraries
     apt update -y && apt upgrade -y
     apt install software-properties-common -y
     add-apt-repository ppa:deadsnakes/ppa
     apt install python3.10-dev python3-pip python3.10-venv -y
     apt install libbz2-dev liblzma-dev libhdf5-dev libglpk-dev libfontconfig1-dev libxml2-dev libx11-dev -y
 
+    # install quarto
+    # @see: https://docs.posit.co/resources/install-quarto/#quarto-tar-file-install
+
+    ## download and install (extract) quarto
+    QUARTO_VERSION="1.4.552"
+    mkdir -p "/opt/quarto/${QUARTO_VERSION}"
+    wget \
+        --max-redirect=20 \
+        -O quarto.tar.gz \
+        "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz"
+    tar -zxvf \
+        quarto.tar.gz \
+        -C "/opt/quarto/${QUARTO_VERSION}" \
+        --strip-components=1
+    
+    ## add quarto to path
+    ## this replaces the existing quarto install made available by the rocker base image
+    ln -sf "/opt/quarto/${QUARTO_VERSION}/bin/quarto" /usr/local/bin/quarto
+
+    ## cleanup
+    rm quarto.tar.gz
+
+%test
+    quarto check
+
 %labels
     Author trevor.f.freeman@gmail.com
-    Version v0.1.1
+    Version v0.1.1.9000
     org.opencontainers.image.source https://github.com/trev-f/apptainer-images
     org.opencontainers.image.description "Run RStudio v4.3.1 with Python available."
 
 %help
-    Run RStudio v4.3.1 with Python available.
+    Run RStudio v4.3.1 with Python v3.10 and Quarto v1.4 available.
