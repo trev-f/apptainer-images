@@ -32,19 +32,9 @@ Stage: build
     ## cleanup
     rm quarto.tar.gz
 
-    # install R and Python packages to get most out of Quarto
-    ## install Jupyter
-    python3 -m pip install jupyter
-    ## install renv, knitr, and rmarkdown
-    install2.r --error \
-        renv \
-        knitr \
-        rmarkdown \
-        && rm -rf /tmp/downloaded_packages
-
 %labels
     Author trevor.f.freeman@gmail.com
-    Version v0.2.0
+    Version v0.3.0
     org.opencontainers.image.source https://github.com/trev-f/apptainer-images
     org.opencontainers.image.description "Run RStudio v4.3.1 with Python available."
 
