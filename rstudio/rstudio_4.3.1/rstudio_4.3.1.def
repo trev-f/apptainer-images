@@ -37,7 +37,7 @@ Stage: build
 
 %labels
     Author trevor.f.freeman@gmail.com
-    Version v0.3.0
+    Version v0.3.1
     org.opencontainers.image.source https://github.com/trev-f/apptainer-images
     org.opencontainers.image.description "Run RStudio v4.3.1 with Python available."
 
