@@ -1,2 +1,5 @@
 # Apptainer image files
 *.sif
+
+# ParseBiosciences software in zip format
+*.zip

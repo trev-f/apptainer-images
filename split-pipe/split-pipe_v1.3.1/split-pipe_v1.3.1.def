@@ -1,0 +1,44 @@
+Bootstrap: docker
+From: ubuntu:22.04
+Stage: build
+
+%files
+    ParseBiosciences-Pipeline.1.3.1.zip /opt
+
+%post
+    # install Python and necessary libraries
+    apt update -y && apt upgrade -y
+    apt install software-properties-common -y
+    add-apt-repository ppa:deadsnakes/ppa
+    apt install python3.10-dev python3-pip python3.10-venv -y
+    apt install build-essential \
+        samtools \
+        rna-star \
+        unzip \
+        pigz \
+        zlib1g-dev \
+        libbz2-dev \
+        libcurl4-openssl-dev \
+        libssl-dev \
+        -y
+
+    # unzip the pipeline directory and cleanup
+    unzip /opt/ParseBiosciences-Pipeline.1.3.1.zip -d /opt
+    rm /opt/ParseBiosciences-Pipeline.1.3.1.zip
+
+    # install pipeline package
+    # pip runs the script 'setup.py' in the pipeline directory
+    pip install --no-cache-dir /opt/ParseBiosciences-Pipeline.1.3.1/
+    rm -r /opt/ParseBiosciences-Pipeline.1.3.1/
+
+%runscript
+    exec split-pipe "${@}"
+
+%labels
+    Author trevor.f.freeman@gmail.com
+    Version v0.0.0.9000
+    org.opencontainers.image.source https://github.com/trev-f/apptainer-images
+    org.opencontainers.image.description "Run ParseBiosciences pipeline split-pipe v1.3.1."
+
+%help
+    Run ParseBiosciences pipeline split-pipe v1.3.1.
