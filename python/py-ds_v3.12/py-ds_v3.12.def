@@ -1,0 +1,22 @@
+Bootstrap: docker
+From: python:3.12.4-slim-bookworm
+Stage: build
+
+%files
+    requirements.txt
+
+%post
+    pip install --upgrade pip
+    pip install --requirement requirements.txt
+
+%runscript
+    exec python3 "${@}"
+
+%labels
+    Author trevor.f.freeman@gmail.com
+    Version v0.1.0
+    org.opencontainers.image.source https://github.com/trev-f/apptainer-images
+    org.opencontainers.image.description "Run Python version 3.12 with Pandas."
+
+%help
+    Run Python version 3.12 with Pandas setup to read and write Excel files.
