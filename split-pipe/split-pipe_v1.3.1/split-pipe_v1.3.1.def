@@ -45,6 +45,7 @@ Stage: build
 
 %environment
     export PATH="/opt/miniconda/bin:${PATH}"
+    export NUMBA_CACHE_DIR="/tmp/"
 
 %runscript
     exec split-pipe "${@}"
