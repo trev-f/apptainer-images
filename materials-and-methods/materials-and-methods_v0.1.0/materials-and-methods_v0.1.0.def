@@ -1,0 +1,31 @@
+Bootstrap: docker
+From: pandoc/core:3.5.0-ubuntu
+Stage: build
+
+%post
+    # install Python and necessary libraries
+    apt update -y && apt upgrade -y
+    apt install -y software-properties-common
+    add-apt-repository ppa:deadsnakes/ppa
+    apt install -y \
+        python3-full \
+        python3-pip
+    python3 -m venv /opt/venv
+    . /opt/venv/bin/activate
+
+    # install Jinja2-CLI
+    python3 -m pip install jinja2-cli
+
+%environment
+    export VIRTUAL_ENV=/opt/venv
+    export PATH="${VIRTUAL_ENV}/bin:${PATH}"
+
+%labels
+    Author tfreem10@utk.edu
+    Version v0.1.0
+    org.opencontainers.image.source https://github.com/trev-f/apptainer-images
+    org.opencontainers.image.description "Write materials and methods for utia-gc/ngs with jinja2-cli and Pandoc."
+
+%help
+    Write materials and methods for utia-gc/ngs with jinja2-cli and Pandoc.
+    Makes jinja2-cli available with `jinja2` command and Pandoc available with `pandoc` command.
