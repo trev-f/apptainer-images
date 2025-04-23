@@ -26,7 +26,6 @@ Stage: build
         libpcre2-dev \
         libharfbuzz-dev \
         libfribidi-dev \
-        r-base-dev \
         -y
 
     # install quarto
@@ -50,15 +49,10 @@ Stage: build
 
     # update built-in R packages
     R -e 'update.packages(ask = FALSE, checkbuilt = TRUE)'
-    # install Rcpp
-    install2.r \
-        --error \
-        Rcpp \
-        renv
 
 %labels
     Author trevor.f.freeman@gmail.com
-    Version v0.0.0.9000
+    Version v0.1.0
     org.opencontainers.image.source https://github.com/trev-f/apptainer-images
     org.opencontainers.image.description "Run RStudio v4.5.0 with Python v3.12 and Quarto ${QUARTO_VERSION} available."
 
