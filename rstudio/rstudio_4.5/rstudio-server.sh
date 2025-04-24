@@ -15,7 +15,7 @@
 # CONFIG
 ################
 # URI for apptainer image
-readonly rstudio_server_image="oras://oras://ghcr.io/trev-f/rstudio_4.5:latest"
+readonly rstudio_server_image="oras://ghcr.io/trev-f/rstudio_4.5:latest"
 
 
 ################
