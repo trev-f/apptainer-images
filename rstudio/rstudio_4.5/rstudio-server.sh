@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16GB
 #SBATCH --time=00-08:00:00
-#SBATCH --job-name=rstudio_server_local_test
+#SBATCH --job-name=rstudio_server
 #SBATCH --error=job_logs/%j_-_%x.err
 #SBATCH --output=/dev/null
 #SBATCH --signal=USR2
