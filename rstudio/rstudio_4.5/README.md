@@ -2,7 +2,7 @@
 
 Ann Apptainer container image based on `rocker/rstudio`.
 
-Run RStudio server v4.5 with Python v3.12 and Quarto v1.6 available.
+Run RStudio server v4.5 with Python v3.12 and Quarto v1.8 available.
 
 ## Usage
 

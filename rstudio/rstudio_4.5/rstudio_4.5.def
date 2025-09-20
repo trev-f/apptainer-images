@@ -53,7 +53,7 @@ Stage: build
 
 %labels
     Author trevor.f.freeman@gmail.com
-    Version v0.1.0
+    Version v0.2.0
     org.opencontainers.image.source https://github.com/trev-f/apptainer-images
     org.opencontainers.image.description "Run RStudio v4.5.1 with Python v3.12 and Quarto ${QUARTO_VERSION} available."
 
