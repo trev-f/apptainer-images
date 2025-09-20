@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: rocker/rstudio:4.5.0
+From: rocker/rstudio:4.5.1
 Stage: build
 
 %post
@@ -55,7 +55,7 @@ Stage: build
     Author trevor.f.freeman@gmail.com
     Version v0.1.0
     org.opencontainers.image.source https://github.com/trev-f/apptainer-images
-    org.opencontainers.image.description "Run RStudio v4.5.0 with Python v3.12 and Quarto ${QUARTO_VERSION} available."
+    org.opencontainers.image.description "Run RStudio v4.5.1 with Python v3.12 and Quarto ${QUARTO_VERSION} available."
 
 %help
-    Run RStudio v4.5 with Python v3.12 and Quarto v1.6 available.
+    Run RStudio v4.5 with Python v3.12 and Quarto v1.8 available.
