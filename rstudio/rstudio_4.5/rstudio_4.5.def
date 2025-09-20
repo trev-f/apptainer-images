@@ -26,6 +26,7 @@ Stage: build
         libpcre2-dev \
         libharfbuzz-dev \
         libfribidi-dev \
+	libwebp-dev \
         -y
 
     # install quarto
