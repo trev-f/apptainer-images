@@ -32,7 +32,7 @@ Stage: build
     # install quarto
     # @see: https://docs.posit.co/resources/install-quarto/#quarto-tar-file-install
     ## download and install (extract) quarto
-    QUARTO_VERSION="1.6.43"
+    QUARTO_VERSION="1.8.24"
     mkdir -p "/opt/quarto/${QUARTO_VERSION}"
     wget \
         --max-redirect=20 \
