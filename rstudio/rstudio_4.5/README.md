@@ -18,7 +18,7 @@ Usage is inspired by (and very similar to) that covered in the [Rocker Project's
 > I prefer using the `apptainer` commands and `APPTAINER_`-prefixed environment variables in place of Singularity.
 
 ```bash
-apptainer pull oras://oras://ghcr.io/trev-f/rstudio_4.5:latest
+apptainer pull oras://ghcr.io/trev-f/rstudio_4.5:latest
 ```
 
 > [!CAUTION]  
