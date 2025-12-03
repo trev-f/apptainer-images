@@ -1,14 +1,18 @@
 # RStudio v4.5
 
-Ann Apptainer container image based on `rocker/rstudio`.
+An Apptainer container image based on `rocker/rstudio`.
 
 Run RStudio server v4.5 with Python v3.12 and Quarto v1.8 available.
+
+## Images
+
+All images and versions are hosted on GitHub packages tied to this repo: <https://github.com/trev-f/apptainer-images/pkgs/container/rstudio_4.5>
 
 ## Usage
 
 ### Basic
 
-Usage is very similar to that covered in the [Rocker Project's Singularity docs](https://rocker-project.org/use/singularity.html).
+Usage is inspired by (and very similar to) that covered in the [Rocker Project's Singularity docs](https://rocker-project.org/use/singularity.html).
 
 > [!NOTE]  
 > I prefer using the `apptainer` commands and `APPTAINER_`-prefixed environment variables in place of Singularity.
